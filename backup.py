@@ -12,6 +12,8 @@ output = cli.cli("show run")
 os.chdir("/bootflash/enauto-labs/")
 with open("enauto_backup/show_run.conf", "w") as f:
     f.write(output)
+print("Saved configuration file locally")
 os.system("git add .")
 os.system("git commit -am 'commited by IOS XE Automation'")
 os.system("git push")
+print("Pushed changes to remote repository")
