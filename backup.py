@@ -1,4 +1,11 @@
 #!/bin/python
+"""This Guest Shell script backs up, commits and pushes running config.
+EEM configuration to automatically trigger the script:
+event manager applet GUESTSHELL-CONFIG-CHANGE-TO-GIT
+ event syslog pattern "%SYS-5-CONFIG_I: Configured from"
+ action 0.0 cli command "enable"
+ action 1.0 cli command "guestshell run python /bootflash/enauto-labs/backup.py"
+"""
 import os
 import cli
 output = cli.cli("show run")
