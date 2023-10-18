@@ -2,7 +2,7 @@
 import os
 import cli
 output = cli.cli("show run")
-#os.chdir("enauto_backup/")
+os.chdir("/bootflash/enauto-labs/")
 with open("enauto_backup/show_run.conf", "w") as f:
     f.write(output)
 os.system("git add .")
